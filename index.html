@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 31</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 31: La Entrega Especial de Kinderbot</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Kinderbot y 10 iBricks por cada pareja. Asegúrate de que los Kinderbots estén cargados y funcionando.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡Nuevo Desafío para Kinderbot! ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Dar la bienvenida, recordar la habilidad aprendida (avanzar) e introducir el nuevo reto (girar).</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda y recuerda cómo Kinderbot aprendió a avanzar.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Hola, mis valientes ingenieros del CODE SQUAD! ¿Cómo está nuestro amigo Kinderbot hoy? ¡Exacto, aprendió a ir hacia adelante gracias a ustedes! ¡Fue un gran paso! Pero... ¿saben qué? ¡Hoy Kinderbot tiene una misión súper importante y necesita aprender a hacer algo nuevo! Algo que le permitirá llegar a lugares... ¡inesperados!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica que entrenarán para aprender a girar.</td>
+                <td>
+                     <div class="dialogue">
+                        "Para que Kinderbot pueda cumplir su misión de hoy, necesita aprender a... ¡GIRAR! ¡Sí, como cuando nosotros volteamos para ver algo a nuestro lado! Y para que nuestros cerebros entiendan bien cómo enseñarle, ¡vamos a nuestro confiable Gimnasio Cerebral! La canción de hoy tendrá pasos hacia adelante y ¡giros sorpresa! ¡Atentos todos!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Practicar secuencias que incluyen avance y giro a través del movimiento corporal.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile, poniendo énfasis en los comandos de giro.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Listos para el ritmo, CODE SQUAD! Ahora el Baile de Algoritmos tiene un nuevo paso: ¡el giro! Escuchen con atención: 'Adelante, adelante... ¡GIRA!'. Cuando escuchen 'GIRA', ¡damos una vuelta en nuestro lugar! Vamos a seguir la secuencia completa. ¡Música, por favor! ¡Demostrémosle a Kinderbot cómo se hace!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema - La Entrega Especial -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🎁 Actividad 3: La Entrega Especial de Gniusville ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Presentar la historia y el desafío espacial: navegar un camino en 'L' usando un giro.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Narra la historia de la entrega especial y el amigo que vive "a la vuelta de la esquina".</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Atención, CODE SQUAD! ¡Misión Urgente! Nuestro amigo, el Profesor Chispa, que vive aquí en Gniusville, ¡ha inventado algo increíble! ¡Una semilla que brilla en la oscuridad! ¡Wow! Y quiere enviársela como regalo a su amiga, la Inventora Luna, que vive muy cerca. Pero hay un detalle: ¡Luna vive justo a la vuelta de la esquina! Kinderbot tiene el paquete listo (imaginen que lo lleva), ¡pero no sabe cómo doblar esquinas!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Explica el reto usando iBricks para formar una 'L', representando el camino y la esquina que Kinderbot debe doblar.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Aquí es donde entran ustedes, súper programadores! Miren, vamos a usar nuestros bloques gigantes (iBricks) para construir el camino. Pondremos uno aquí, donde empieza Kinderbot (Punto A). Otro bloque marcará la esquina donde debe girar (Punto B). Y el último bloque será la casa de la Inventora Luna (Punto C), ¡justo después de la esquina! (Forma una L con 3 iBricks). Nuestro desafío es enseñarle a Kinderbot a ir del Punto A, girar en el Punto B, ¡y llegar al Punto C para entregar la semilla brillante! ¿Aceptan la misión?"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Ingenieros de Esquinas! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Formar parejas para planificar y ejecutar la secuencia de giro.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que planear giros requiere trabajo en equipo. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Ingenieros del CODE SQUAD! ¡Doblar esquinas es un truco de programación genial! Y para planearlo bien, ¡necesitamos trabajar en equipo! Dos cabezas pensando juntas pueden descubrir la mejor manera de hacer que Kinderbot gire justo en el momento correcto. ¡Vamos a formar nuestros Equipos de Ingenieros de Esquinas! Busquen a su compañero o compañera para esta misión tan importante."
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja. Recuérdales hablar y decidir juntos la secuencia de botones.</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Listos, Equipos de Ingenieros? ¡Perfecto! Ahora, recuerden hablar entre ustedes. ¿Cuántos pasos adelante necesita Kinderbot antes de girar? ¿Hacia qué lado debe girar? ¿Necesita avanzar después de girar? ¡Decídanlo juntos! La Inventora Luna espera su paquete. ¡Confío en su trabajo en equipo!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación - ¡Programando el Giro! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-codificacion')">
+        <div class="title">⌨️ Actividad 5: ¡Código para Doblar la Esquina! ⏰ Tiempo: 6 minutos</div>
+        <div class="subtitle">Objetivo: Guiar la construcción del camino en 'L' y la programación de la secuencia Adelante-Girar (y Adelante extra para K2/K3).</div>
+    </div>
+    <div id="reto-codificacion" class="content">
+        <table>
+            <!-- Paso Común: Repasar Botones -->
+             <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Reproduce la **DIAPOSITIVA 8** "Recordando a Kinderbot". Repasa rápidamente los botones Adelante y Girar (elegir uno, ej. Giro Derecha, y ser consistente).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Ingenieros! Antes de programar, recordemos nuestros botones clave: Flecha Adelante (para avanzar) y esta Flecha Curva (para girar, ¡hoy giraremos todos hacia la DERECHA!). Usaremos 'Adelante' para llegar a la esquina, y 'Girar Derecha' para doblarla. ¡Listos para dar las instrucciones!"
+                    </div>
+                </td>
+            </tr>
+            <!-- Contenido Específico por Nivel -->
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Misión K1: Giro Básico". Guía para construir la 'L' con iBricks y programar 2 pasos (Adelante, Girar Derecha). El destino (iBrick C) está justo al lado de la esquina (iBrick B).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! Construyan su camino: un bloque de inicio (A), otro para la esquina (B) y el último (C) justo al ladito de la esquina, ¡formando una L! (Demuestra). Ahora, el código para Kinderbot: ¡Que avance hasta la esquina! Presionen 'Adelante' ¡UNA vez! ¡Bien! Ahora, ¡que gire a la DERECHA para mirar hacia la casa de Luna! Presionen 'Girar Derecha' ¡UNA vez! Código listo: Adelante, Girar Derecha. ¡No toquen 'Go' todavía!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                <td><strong>PASO 2 - K2 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Misión K2: Giro y Avance". Guía para construir la 'L' y programar 3 pasos (Adelante, Girar Derecha, Adelante). El destino (iBrick C) está un paso después de la esquina (iBrick B).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Ingenieros K2! Armen su camino en L: Inicio (A), Esquina (B), y Destino (C) un pasito después de la esquina. (Demuestra). ¡Listos para el código! Primero, ¡llegar a la esquina! Presionen 'Adelante' ¡UNA vez! Segundo, ¡doblar la esquina! Presionen 'Girar Derecha' ¡UNA vez! Tercero, ¡llegar a la casa de Luna! Presionen 'Adelante' ¡UNA vez más! Código: Adelante, Girar Derecha, Adelante. ¡Preparen su código, sin presionar 'Go'!"
+                    </div>
+                </td>
+            </tr>
+            <!-- K3 -->
+             <tr class="k3-content">
+                <td><strong>PASO 2 - K3 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Misión K3: Ajustando el Camino". Guía para construir la 'L' y programar 3-4 pasos, ajustando los pasos 'Adelante'. El destino (iBrick C) está a 1 o 2 pasos de la esquina (iBrick B).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Expertos Ingenieros K3! Construyan su camino en L: Inicio (A), Esquina (B), y Destino (C) un poco más allá de la esquina. (Demuestra). Ahora, ¡a planear! Necesitan llegar a la esquina... ¿quizás UN paso 'Adelante'? Luego, 'Girar Derecha'. Y después... ¿cuántos pasos 'Adelante' para llegar EXACTO a la casa de Luna (C)? ¿Uno o dos? ¡Hablen con su pareja y decidan! Programen la secuencia completa (ej. Adelante, Girar Derecha, Adelante, Adelante). ¡Preparen el código, pero no le den a 'Go' todavía! ¡Pura estrategia!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡Probando la Entrega! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('probando-entrega')">
+        <div class="title">🚀 Actividad 6: ¡Realizando la Entrega Especial! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Ejecutar el código programado, observar si Kinderbot completa el giro y llega al destino. Fomentar el debugging simple.</div>
+    </div>
+    <div id="probando-entrega" class="content">
+        <table>
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 1 - K1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 12** "¡Éxito K1!". Anima a colocar a Kinderbot en el inicio (A) y presionar 'Go'. Observar si avanza y gira, quedando orientado hacia C. Celebrar el giro.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1, llegó la hora de la entrega! Pongan a Kinderbot en el bloque de inicio (A), mirando hacia la esquina (B). ¿Listos con su código 'Adelante, Girar Derecha'? ¡Presionen el botón verde 'Go'! ¡Miren! Avanzó... ¡y GIRÓ! ¡Wow! ¡Ahora está mirando hacia la casa de Luna (C)! ¡Aprendió a doblar la esquina! ¡Bravo, ingenieros!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 1 - K2 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 13** "¡Éxito K2!". Anima a colocar a Kinderbot en A y presionar 'Go'. Observar si completa la secuencia A-G-A y llega a C. Celebrar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Ingenieros K2! ¡A probar la ruta completa! Coloquen a Kinderbot en el inicio (A). ¿Listos con su código 'Adelante, Girar Derecha, Adelante'? ¡Presionen 'Go'! ¡Veamos si llega a la esquina... gira... y avanza a la casa de Luna (C)! ¡Sííí! ¡Llegó! ¡El paquete ha sido entregado! ¡Misión cumplida, equipo!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 1 - K3 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 14** "¡Éxito K3!". Anima a colocar a Kinderbot en A y presionar 'Go'. Observar si la secuencia programada lo lleva exactamente a C. Si no, animar a borrar ('Clear') y ajustar los pasos 'Adelante' y probar de nuevo. Celebrar el ajuste.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Expertos K3, a verificar la precisión! Pongan a Kinderbot en el inicio (A). ¿Listos con su código súper planeado? ¡Presionen 'Go'! ¡Observen con atención! ¿Llegó justo a la casa de Luna (C)? Si se pasó un poquito o le faltó, ¡no hay problema! ¡Somos ingenieros! Usen el botón azul 'Clear' para borrar, ajusten el número de pasos 'Adelante' (antes o después del giro) y ¡prueben otra vez! ¡Encontrar la solución exacta es lo más emocionante! ¡Celebremos cuando lo logren!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7: Mensaje del Cuartel (Omitida para Misión 31) -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Entrega Realizada y Reflexión! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Cerrar la historia celebrando el éxito, reforzar la habilidad de giro y reflexionar sobre la planificación espacial.</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Misión Cumplida!". Cierra la historia (Luna recibió la semilla brillante). Realiza preguntas de reflexión.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡MISIÓN ESPECTACULARMENTE CUMPLIDA, CODE SQUAD! ¡Gracias a su increíble programación, Kinderbot dobló la esquina como un profesional y entregó la semilla brillante a la Inventora Luna! ¡Está súper contenta y les manda las gracias! ¡Ahora puede plantar su jardín luminoso! Han demostrado que pueden guiar a Kinderbot por caminos con curvas. Pensemos un momento:
+1. ¿Qué nuevo movimiento aprendió Kinderbot hoy? (¡A girar!)
+2. ¿Por qué era importante que Kinderbot girara en la esquina? (Para llegar a la casa de Luna / Para no chocar)
+3. ¿Tuvieron que pensar bien dónde poner los bloques para hacer el camino?
+¡Son unos programadores e ingenieros geniales! ¡Kinderbot está aprendiendo muchísimo con ustedes! ¡Nos vemos en la próxima misión!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity');
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active');
+        } else {
+            content.style.display = "block";
+            parentActivity.classList.add('active');
+        }
+    }
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             el.style.display = 'table-row';
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
